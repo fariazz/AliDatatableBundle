@@ -1,5 +1,11 @@
-<form action="{{ path(delete_route , { 'id': dt_item }) }}" method="post" style="float:right">
+<div class="table_icon_options">
+    <span title="edit">
+        <a class="tablelink_edit" title="edit" href="{{ path(edit_route,{'id':dt_item}) }}"></a>
+    </span>	
+    <span>
+        <form action="{{ path(delete_route , { 'id': dt_item }) }}" method="post" style="display:inline">
     {{ delete_form_prototype | replace ({'@id':dt_item}) | raw  }}
-    <button type="submit">Delete</button>
+    <button class="tablelink_btn_delete" title="delete" type="submit"></button>
 </form>
-<a href="{{ path(edit_route,{'id':dt_item}) }}">edit</a>
+    </span>
+</div>
